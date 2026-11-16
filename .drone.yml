@@ -8,14 +8,14 @@ clone:
 
 steps:
 # 2. 手动克隆步骤（加上代理）
-- name: clone1
+- name: clone
   image: alpine/git
   environment:
     # 把这里的 .151 改成 .155
     HTTP_PROXY: http://192.168.155.142:7890
     HTTPS_PROXY: http://192.168.155.142:7890
   commands:
-    - git clone1 https://github.com/yjm091/baota2.git .
+    - git clone https://github.com/yjm091/baota2.git .
 # 3. 传输文件到宝塔
 - name: scp-files
   image: appleboy/drone-scp
